@@ -62,16 +62,19 @@ export default (policies = [
     usd1: "40",
     coverageHighlights: [
       "AccidentialDamage",
-      "Theft",
+      "ShortCircuitbyLightning",
       "LiquidDamage",
       "Fire",
-      "ShortCircuitbyLightning"
+      "Theft",
     ],
     covered: [
       "AccidentialDamage",
       "Theft",
       "LiquidDamage",
       "Fire",
+      "ShortCircuitbyLightning"
+    ],
+    notCovered: [
       "Negligence",
       "wilfulAct",
       "dishonest",
@@ -79,7 +82,6 @@ export default (policies = [
       "seizure",
       "Wear",
     ],
-    notCovered,
     subclassName: "PurchaseTravel",
     endorsementFields: [
       {
@@ -146,7 +148,9 @@ export default (policies = [
       "wallet",
       "exchange",
       "employee",
-      "cryptocurrency",
+      "cryptocurrency"
+    ],
+    notCovered: [
       "Negligence",
       "wilfulAct",
       "dishonest",
@@ -154,7 +158,6 @@ export default (policies = [
       "seizure",
       "Wear",
     ],
-    notCovered,
     ...paParseData
   }
 ]);

@@ -1505,25 +1505,6 @@ class ChatScreen extends Component {
   }
 }
 
-          // ref="chat"
-          // messages={this.state.messages /*AppStore.messages.slice()*/}
-          // onSend={this.handleUserSend}
-          // user={CUSTOMER_USER}
-          // onLongPress={() => {}}
-          // renderActions={this.renderActions}
-          // renderCustomView={this.renderEditButton}
-          // renderTime={() => {}}
-          // renderDay={() => {}}
-          // renderBubble={this.renderBubble}
-          // renderMessage={this.renderMessage}
-          // renderMessageImage={this.renderMessageImage}
-          // renderMessageText={this.renderMessageText}
-          // renderSend={this.renderSend}
-          // renderComposer={this.renderComposer}
-          // renderChatFooter={this.renderChatFooter}
-          // minInputToolbarHeight={minInputToolbarHeight}
-          // listViewProps={listViewProps}
-
 const messageContainerStyle = {
   left: {
     alignItems: "flex-start"

@@ -49,8 +49,24 @@ class PolicyCoverages extends Component {
 
     const coverageHighlights =
       this.props.coverageHighlights || this.props.covered.slice(0, 3);
+    var coverageHighlights1=[], coverageHighlights2=[]
+    if(coverageHighlights.length==4){
+      coverageHighlights1 = coverageHighlights.slice(0,2)
+      coverageHighlights2 = coverageHighlights.slice(2,4)
+    }else if(coverageHighlights.length==5){
+      coverageHighlights1 = coverageHighlights.slice(0,3)
+      coverageHighlights2 = coverageHighlights.slice(3,5)
+    }
       
-    const coverageItems = coverageHighlights.map(item => (
+    const coverageItems1 = coverageHighlights1.map(item => (
+      <CoverageItem
+        key={item}
+        navigation={this.props.navigation}
+        covered={true}
+        {...AppStore.coverages[item]}
+      />
+    ));
+    const coverageItems2 = coverageHighlights2.map(item => (
       <CoverageItem
         key={item}
         navigation={this.props.navigation}
@@ -62,7 +78,8 @@ class PolicyCoverages extends Component {
     return (
       <View style={styles.configContainer}>
         <Text style={styles.configTitle}>COVERAGE HIGHLIGHTS</Text>
-        <View style={styles.coverage}>{coverageItems}</View>
+        <View style={styles.coverage}>{coverageItems1}</View>
+        <View style={styles.coverage}>{coverageItems2}</View>
       </View>
     );
   }

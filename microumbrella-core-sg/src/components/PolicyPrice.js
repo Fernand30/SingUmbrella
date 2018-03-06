@@ -115,6 +115,7 @@ const styles = StyleSheet.create({
   },
   priceCurrency: {
     fontSize: 12,
+    color: 'white'
   },
   priceAmountDecimal: {
     alignSelf: "flex-start",
@@ -134,10 +135,12 @@ const styles = StyleSheet.create({
   },
   priceAmount: {
     fontSize: 16,
-    marginLeft :5
+    marginLeft :5,
+    color:'white'
   },
   pricePerMonth: {
     fontWeight: "500",
     fontSize: 12,
+    color: 'white'
   }
 });

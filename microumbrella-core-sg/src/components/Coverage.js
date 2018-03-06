@@ -132,8 +132,9 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1
   },
   description: {
-    fontSize: 16,
-    color: colors.primaryText
+    fontSize: 15,
+    color: colors.primaryText,
+    width: 300,
   },
   title: {
     marginTop: 10,

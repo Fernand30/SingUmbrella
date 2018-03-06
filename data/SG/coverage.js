@@ -267,55 +267,55 @@ export default (coverageItems = {
     title: "Accidential Damage",
     icon: "accidental",
     description:
-      "The amount of beneﬁt will be paid to you, while travelling overseas you suffered loss or damage to your home contents caused by burglary."
+      "This covers physical damage that result in failure to oeprate correctly, caused by non-intentional, unforeseen or unexpected event."
   },
   Theft: {
     title: "Theft",
     icon: "Theft",
     description:
-      "The amount of beneﬁt will be paid to you, while travelling overseas you suffered loss or damage to your home contents caused by burglary."
+      "This covers any incident of robbery or forced entry to the premise where your mining hardware is situated."
   },
   LiquidDamage: {
     title: "Liquid Damage",
     icon: "Liquid",
     description:
-      "The amount of beneﬁt will be paid to you, while travelling overseas you suffered loss or damage to your home contents caused by burglary."
+      "This covers your hardware sustained liquid damage that result in failure to operate correctly, caused by unforeseen or unexpected event."
   },
   Fire: {
     title: "Fire",
     icon: "Fire",
     description:
-      "The amount of beneﬁt will be paid to you, while travelling overseas you suffered loss or damage to your home contents caused by burglary."
+      "This covers damage that result in failure to operate correctly, caused by unforeseen or unexpected fire."
   },
   ShortCircuitbyLightning: {
     title: "Short Circuit by Lightning",
     icon: "short",
     description:
-      "The amount of beneﬁt will be paid to you, while travelling overseas you suffered loss or damage to your home contents caused by burglary."
+      "This covers the event of short circuit that result in failure to operato correctly, caused by lightning strikes."
   },
   exchange: {
     title: "Exchange insolvency",
     icon: "exchange",
     description:
-      "The amount of beneﬁt will be paid to you, while travelling overseas you suffered loss or damage to your home contents caused by burglary."
+      "This covers the of your cryptocurrency stored on your exchange, in the event the exchange operator suffered bankruptcy or closed down permanently."
   },
   employee: {
-    title: "Theft by Wallet Operator&apos;s Employee",
+    title: "Theft by Wallet Operator's Employee",
     icon: "employee",
     description:
-      "The amount of beneﬁt will be paid to you, while travelling overseas you suffered loss or damage to your home contents caused by burglary."
+      "This covers the of your cryptocurrency stored on your wallet, in the event the wallet operator's personnel stole or traded your cryptocurrency."
   },
   cryptocurrency: {
     title: "Cryptocurrency Exchange Hack",
     icon: "cryptocurrency",
     description:
-      "The amount of beneﬁt will be paid to you, while travelling overseas you suffered loss or damage to your home contents caused by burglary."
+      "This convers the loss of your cryptocurrency, caused by cyberattack on your cryptocurrency exchange."
   },
   wallet: {
     title: "Wallet Operator insolvency",
     icon: "wallet",
     description:
-      "The amount of beneﬁt will be paid to you, while travelling overseas you suffered loss or damage to your home contents caused by burglary."
+      "This covers the of your cryptocurrency stored on your wallet, in the event the wallet operator suffered bankruptcy or closed down permanently."
   },
   Negligence: {
     title: "Negligence",
@@ -324,7 +324,7 @@ export default (coverageItems = {
       "Your failure to take due care and precaution leading to damage or losts."
   },
   wilfulAct: {
-    title: "wilful Act",
+    title: "Wilful Act",
     icon: "wilfulAct",
     description:
       "Act done voluntarily with either an intentional disregard of, or plain indifference to resulting damage or loss."
@@ -339,7 +339,7 @@ export default (coverageItems = {
     title: "War and terrorism",
     icon: "war",
     description:
-      "Ant consequence of war, act of foreign enemy, civil war, rebellion, revolution, insurrection or usurped power."
+      "Any consequence of war, act of foreign enemy, civil war, rebellion, revolution, insurrection or usurped power."
   },
   seizure: {
     title: "Seizure and confiscation",
