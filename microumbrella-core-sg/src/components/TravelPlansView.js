@@ -34,10 +34,10 @@ const patchCoverageWithKey = coverage => ({
 });
 
 const coverageSummary = {
-  title: "Coverage Summary",
+  title: "Coverage for each unit",
   coverage: [
     {
-      title: "Overseas Medical Expenses",
+      title: "Accidential Damage",
       benefitPayable: {
         basic: "$150,000",
         premium: "$250,000",
@@ -54,7 +54,7 @@ const coverageSummary = {
     },
     {
       title:
-        "Loss of Baggage and Personal Effects\n($500 for each article or\npair or set of article)",
+        "Loss of Baggage and Personal Effects",
       benefitPayable: {
         basic: "$3,000",
         premium: "$5,000",
@@ -158,10 +158,10 @@ class TravelPlanTab extends Component {
         style={{
           flex: 1,
           padding: 13,
-          backgroundColor: colors.softBorderLine
+          backgroundColor: 'translate'
         }}
       >
-        <Text style={{ color: colors.primaryText, fontSize: 15 }}>
+        <Text style={{ color: colors.primaryText, fontSize: 15, textAlign: 'center'}}>
           {section.title}
         </Text>
       </View>
@@ -171,25 +171,53 @@ class TravelPlanTab extends Component {
   renderUnexpanded() {
     const listSections = [coverageSummary].map(benefit => ({
       data: benefit.coverage.map(patchCoverageWithKey),
-      title: benefit.title.toUpperCase(),
+      title: benefit.title,
       key: benefit.title,
       renderItem: this.renderCoverage
     }));
+    questions = this.props.plan.questions
     return (
       <Animated.View style={{ opacity: this.state.fadeAnim }}>
-        <SectionList
-          scrollEnabled={false}
-          removeClippedSubviews={Platform.select({ ios: true, android: false })}
-          ItemSeparatorComponent={itemSeparatorComponent}
-          renderSectionHeader={this.renderSectionHeader}
-          sections={listSections}
-        />
-        {itemSeparatorComponent()}
-        <TouchableOpacity onPress={this.props.onExpand}>
-          <View>
-            <Text style={styles.readMoreText}>Read more...</Text>
-          </View>
-        </TouchableOpacity>
+        {/*<SectionList
+                  scrollEnabled={false}
+                  removeClippedSubviews={Platform.select({ ios: true, android: false })}
+                  ItemSeparatorComponent={itemSeparatorComponent}
+                  renderSectionHeader={this.renderSectionHeader}
+                  sections={listSections}
+                />*/}
+        {(this.props.type=='miner')?<View style={{paddingVertical: 10}}> 
+                 <Text  style={{textAlign:'center',marginTop:0,fontSize: 16}}>Coverage for each unit:</Text>
+                 <Text  style={{fontSize: 13,marginTop:15,marginLeft:10}}>{questions[0].name}</Text>
+                 <Text  style={{fontSize: 13,marginTop:5,marginLeft:10}}>{questions[0].value}</Text>
+                 <Text  style={{fontSize: 13,marginTop:15,marginLeft:10}}>{questions[1].name}</Text>
+                 <Text  style={{fontSize: 13,marginTop:5,marginLeft:10}}>{questions[1].value}</Text>
+                 <Text  style={{fontSize: 13,marginTop:15,marginLeft:10}}>{questions[2].name}</Text>
+                 <Text  style={{fontSize: 13,marginTop:5,marginLeft:10}}>{questions[2].value}</Text>
+                 <Text  style={{fontSize: 13,marginTop:15,marginLeft:10}}>{questions[3].name}</Text>
+                 <Text  style={{fontSize: 13,marginTop:5,marginLeft:10}}>{questions[3].value}</Text>
+                 <Text  style={{fontSize: 13,marginTop:15,marginLeft:10}}>{questions[4].name}</Text>
+                 <Text  style={{fontSize: 13,marginTop:5,marginLeft:10}}>{questions[4].value}</Text>
+                 <View style={styles.rowView}>
+                  <Text  style={{fontSize: 13}}>{questions[5].name}:</Text>
+                  <Text  style={{fontSize: 13}}>{questions[5].value}</Text>
+                 </View>
+                </View>:<View style={{paddingVertical: 20}}> 
+                 <Text  style={{fontSize: 13,marginTop:5,marginLeft:10}}>Each plan covers up to 10 different{'\n'}cryptocurrencies stored on a single{'\n'}wallet. Here is the coverage:</Text>    
+                 
+                 <Text  style={{fontSize: 13,marginTop:15,marginLeft:10}}>{questions[0].name}</Text>
+                 <Text  style={{fontSize: 13,marginTop:5,marginLeft:10}}>{questions[0].value}</Text>
+                 <Text  style={{fontSize: 13,marginTop:15,marginLeft:10}}>{questions[1].name}</Text>
+                 <Text  style={{fontSize: 13,marginTop:5,marginLeft:10}}>{questions[1].value}</Text>
+                 <Text  style={{fontSize: 13,marginTop:15,marginLeft:10}}>{questions[2].name}</Text>
+                 <Text  style={{fontSize: 13,marginTop:5,marginLeft:10}}>{questions[2].value}</Text>
+                 <Text  style={{fontSize: 13,marginTop:15,marginLeft:10}}>{questions[3].name}</Text>
+                 <Text  style={{fontSize: 13,marginTop:5,marginLeft:10}}>{questions[3].value}</Text>
+                </View> }
+        {/*<TouchableOpacity onPress={this.props.onExpand}>
+                  <View>
+                    <Text style={styles.readMoreText}>Read more...</Text>
+                  </View>
+                </TouchableOpacity>*/}
         <Button
           accessibilityLabel={"chat__select-plan_" + this.props.plan.legacyId}
           onPress={() => this.props.onSelectPlan(this.props.planIndex)}
@@ -203,7 +231,7 @@ class TravelPlanTab extends Component {
               fontWeight: "500"
             }}
           >
-            SELECT {this.props.plan.title.toUpperCase()}
+            SELECT PLAN
           </Text>
         </Button>
       </Animated.View>
@@ -211,35 +239,23 @@ class TravelPlanTab extends Component {
   }
 
   render() {
+    
     if (!this.props.expanded) {
       return this.renderUnexpanded();
     }
-    const planId = this.props.plan.legacyId;
+    // const planId = this.props.plan.legacyId;
 
-    const listSections = TRAVEL_BENEFITS.map(benefit => ({
-      data: benefit.coverage.map(patchCoverageWithKey),
-      title: benefit.title.toUpperCase(),
-      key: benefit.title,
-      renderItem: this.renderCoverage
-    }));
-    return (
-      <View>
-        <SectionList
-          scrollEnabled={false}
-          removeClippedSubviews={false}
-          ItemSeparatorComponent={itemSeparatorComponent}
-          renderSectionHeader={this.renderSectionHeader}
-          sections={listSections}
-        />
-        <Button
-          accessibilityLabel={"chat__select-plan_" + planId}
-          onPress={() => this.props.onSelectPlan(this.props.planIndex)}
-          style={styles.selectPlanButton}
-        >
-          SELECT PLAN
-        </Button>
-      </View>
-    );
+    // const listSections = TRAVEL_BENEFITS.map(benefit => ({
+    //   data: benefit.coverage.map(patchCoverageWithKey),
+    //   title: benefit.title.toUpperCase(),
+    //   key: benefit.title,
+    //   renderItem: this.renderCoverage
+    // }));
+    // return (
+    //   <View>
+       
+    //   </View>
+    // );
   }
 }
 
@@ -259,12 +275,13 @@ export default class TravelPlansView extends Component {
 
   render() {
     let tabRoutes = {};
-    const travelPolicy = AppStore.policies.find(p => p.id === "travel");
+    const travelPolicy = AppStore.policies.find(p => p.id === this.props.carouselProps.id);
     travelPolicy.plans.forEach((plan, idx) => {
       tabRoutes[plan.title] = {
         screen: () => (
           <TravelPlanTab
             plan={plan}
+            type = {this.props.carouselProps.id}
             onSelectPlan={this.props.onSelectPlan}
             onExpand={this.handleExpand}
             expanded={this.state.expanded}
@@ -282,6 +299,12 @@ const styles = StyleSheet.create({
     margin: 15,
     color: colors.primaryAccent,
     fontSize: 17
+  },
+  rowView:{
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'center',
+    marginVertical: 10
   },
   selectPlanButton: {
     borderRadius: 0

@@ -135,7 +135,7 @@ export default class PolicyScreen extends Component {
   }
 
   handlePurchase() {
-    this.setState({ renderDeclarationModal: false });
+    this.setState({ renderDeclarationModal: false }); //modal hidden
 
     setTimeout(() => {
       const { currentUser } = this.props.navigation.state.params;
@@ -150,13 +150,15 @@ export default class PolicyScreen extends Component {
         this.props.navigation.navigate("Auth", {
           policy: this.policy
         });
-        // }
+        //alert(JSON.stringify(this.policy))
       } else {
+        
         this.props.navigation.navigate("Chat", {
           questionSet: "buy",
           policy: this.policy,
           currentUser
         });
+        //alert(JSON.stringify(this.policy))
       }
     }, 500);
   }

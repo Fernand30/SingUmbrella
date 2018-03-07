@@ -1081,6 +1081,7 @@ class ChatScreen extends Component {
   }
 
   renderMessage(props) {
+    //alert(JSON.stringify(props))
     const { currentMessage } = props;
     const { currentQuestionIndex } = this.state;
     let currentQuestion;
@@ -1147,9 +1148,10 @@ class ChatScreen extends Component {
       case "planIndex":
         const carouselProps = {
           onSelectPlan: this.handleSelectPlan,
-          plans: this.props.policy.plans
+          plans: this.props.policy.plans,
+          id: this.props.policy.id,
         };
-        if (this.props.policy.isTravelInsurance) {
+        
           const {
             travelDestination,
             recipient,
@@ -1164,21 +1166,10 @@ class ChatScreen extends Component {
             travelDuration: days
           };
           return (
-            <TravelPlansView onSelectPlan={this.handleSelectPlan} />
-            // <TravelInsurancePlanCarousel
-            //   {...carouselProps}
-            //   {...additionalProps}
-            //   onSelectPlan={this.handleSelectTravelInsurancePlan}
-            // />
+            <TravelPlansView carouselProps={carouselProps} onSelectPlan={this.handleSelectPlan} />
           );
-        }
-        return (
-          <PlansTabView
-            onSelectPlan={this.handleSelectPlan}
-            plans={this.props.policy.plans}
-          />
-        );
-      // return <PlanCarousel {...carouselProps} />;
+        
+        
       case "coverageDuration":
         const notCurrentQuestion =
           this.questions[this.state.currentQuestionIndex].id !==
@@ -1468,10 +1459,10 @@ class ChatScreen extends Component {
             contentHeight - WINDOW_HEIGHT * 0.8 + this.state.keyboardHeight;
           scrollHeight = supposedScrollHeight < 0 ? 0 : supposedScrollHeight;
         }
-        this.refs.chat._messageContainerRef.scrollTo({
-          y: scrollHeight,
-          animated: true
-        });
+        // this.refs.chat._messageContainerRef.scrollTo({
+        //   y: scrollHeight,
+        //   animated: true
+        // });
       };
     }
 
