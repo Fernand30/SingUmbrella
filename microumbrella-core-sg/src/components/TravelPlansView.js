@@ -185,34 +185,40 @@ class TravelPlanTab extends Component {
                   renderSectionHeader={this.renderSectionHeader}
                   sections={listSections}
                 />*/}
-        {(this.props.type=='miner')?<View style={{paddingVertical: 10}}> 
+        {(this.props.type=='miner')?<View style={{paddingBottom: 10}}> 
+              <View style={{height:30, backgroundColor:'#dadede',justifyContent:'center'}}>
                  <Text  style={{textAlign:'center',marginTop:0,fontSize: 16}}>Coverage for each unit:</Text>
-                 <Text  style={{fontSize: 13,marginTop:15,marginLeft:10}}>{questions[0].name}</Text>
-                 <Text  style={{fontSize: 13,marginTop:5,marginLeft:10}}>{questions[0].value}</Text>
-                 <Text  style={{fontSize: 13,marginTop:15,marginLeft:10}}>{questions[1].name}</Text>
-                 <Text  style={{fontSize: 13,marginTop:5,marginLeft:10}}>{questions[1].value}</Text>
-                 <Text  style={{fontSize: 13,marginTop:15,marginLeft:10}}>{questions[2].name}</Text>
-                 <Text  style={{fontSize: 13,marginTop:5,marginLeft:10}}>{questions[2].value}</Text>
-                 <Text  style={{fontSize: 13,marginTop:15,marginLeft:10}}>{questions[3].name}</Text>
-                 <Text  style={{fontSize: 13,marginTop:5,marginLeft:10}}>{questions[3].value}</Text>
-                 <Text  style={{fontSize: 13,marginTop:15,marginLeft:10}}>{questions[4].name}</Text>
-                 <Text  style={{fontSize: 13,marginTop:5,marginLeft:10}}>{questions[4].value}</Text>
-                 <View style={styles.rowView}>
-                  <Text  style={{fontSize: 13}}>{questions[5].name}:</Text>
-                  <Text  style={{fontSize: 13}}>{questions[5].value}</Text>
-                 </View>
-                </View>:<View style={{paddingVertical: 20}}> 
-                 <Text  style={{fontSize: 13,marginTop:5,marginLeft:10}}>Each plan covers up to 10 different{'\n'}cryptocurrencies stored on a single{'\n'}wallet. Here is the coverage:</Text>    
-                 
-                 <Text  style={{fontSize: 13,marginTop:15,marginLeft:10}}>{questions[0].name}</Text>
-                 <Text  style={{fontSize: 13,marginTop:5,marginLeft:10}}>{questions[0].value}</Text>
-                 <Text  style={{fontSize: 13,marginTop:15,marginLeft:10}}>{questions[1].name}</Text>
-                 <Text  style={{fontSize: 13,marginTop:5,marginLeft:10}}>{questions[1].value}</Text>
-                 <Text  style={{fontSize: 13,marginTop:15,marginLeft:10}}>{questions[2].name}</Text>
-                 <Text  style={{fontSize: 13,marginTop:5,marginLeft:10}}>{questions[2].value}</Text>
-                 <Text  style={{fontSize: 13,marginTop:15,marginLeft:10}}>{questions[3].name}</Text>
-                 <Text  style={{fontSize: 13,marginTop:5,marginLeft:10}}>{questions[3].value}</Text>
-                </View> }
+              </View>      
+             <Text  style={{fontSize: 16,marginTop:10,marginLeft:10}}>{questions[0].name}</Text>
+             <Text  style={{fontSize: 16,marginTop:0,marginLeft:10}}>{questions[0].value}</Text>
+             <Text  style={{fontSize: 16,marginTop:10,marginLeft:10}}>{questions[1].name}</Text>
+             <Text  style={{fontSize: 16,marginTop:0,marginLeft:10}}>{questions[1].value}</Text>
+             <Text  style={{fontSize: 16,marginTop:10,marginLeft:10}}>{questions[2].name}</Text>
+             <Text  style={{fontSize: 16,marginTop:0,marginLeft:10}}>{questions[2].value}</Text>
+             <Text  style={{fontSize: 16,marginTop:10,marginLeft:10}}>{questions[3].name}</Text>
+             <Text  style={{fontSize: 16,marginTop:0,marginLeft:10}}>{questions[3].value}</Text>
+             <Text  style={{fontSize: 16,marginTop:10,marginLeft:10}}>{questions[4].name}</Text>
+             <Text  style={{fontSize: 16,marginTop:0,marginLeft:10}}>{questions[4].value}</Text>
+             <View style={styles.rowView}>
+              <Text  style={{fontSize: 16}}>{questions[5].name}:</Text>
+              <Text  style={{fontSize: 16}}>{questions[5].value}</Text>
+             </View>
+            </View>:<View style={{paddingBottom: 20}}> 
+            <View style={{height:40, backgroundColor:'#dadede',justifyContent:'center'}}>
+               <Text  style={{textAlign:'center',marginTop:0,fontSize: 16}}>Coverage for each unit:</Text>
+            </View>   
+             <Text  style={{fontSize: 16,marginTop:5,marginLeft:10}}>Each plan covers up to 10 different{'\n'}cryptocurrencies stored on a single{'\n'}wallet. Here is the coverage:</Text>    
+             
+             <Text  style={{fontSize: 16,marginTop:15,marginLeft:10}}>{questions[0].name}</Text>
+             <Text  style={{fontSize: 16,marginTop:5,marginLeft:10}}>{questions[0].value}</Text>
+             <Text  style={{fontSize: 16,marginTop:15,marginLeft:10}}>{questions[1].name}</Text>
+             <Text  style={{fontSize: 16,marginTop:5,marginLeft:10}}>{questions[1].value}</Text>
+             <Text  style={{fontSize: 16,marginTop:15,marginLeft:10}}>{questions[2].name}</Text>
+             <Text  style={{fontSize: 16,marginTop:5,marginLeft:10}}>{questions[2].value}</Text>
+             <Text  style={{fontSize: 16,marginTop:15,marginLeft:10}}>{questions[3].name}</Text>
+             <Text  style={{fontSize: 16,marginTop:5,marginLeft:10}}>{questions[3].value}</Text>
+              
+            </View> }
         {/*<TouchableOpacity onPress={this.props.onExpand}>
                   <View>
                     <Text style={styles.readMoreText}>Read more...</Text>
